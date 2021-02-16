@@ -3,6 +3,8 @@ package com.example.countries.interactor;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.android.volley.Request;
@@ -36,20 +38,25 @@ public class MapInteractor {
     }
 
     public void getData(LatLng latLng){
-        try {
-            addresses =geocoder.getFromLocation(latLng.latitude,latLng.longitude,1);
-            String address = addresses.get(0).getAddressLine(0);
-            String city = addresses.get(0).getLocality();
-            String state = addresses.get(0).getAdminArea();
-            String country = addresses.get(0).getCountryName();
-            String postalCode = addresses.get(0).getPostalCode();
-            Log.d("ADDRESS",address+" - "+city+" - "+country+" - "+state);
-            Country country_location = new Country();
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+            try {
+                addresses =geocoder.getFromLocation(latLng.latitude,latLng.longitude,1);
+                String address = addresses.get(0).getAddressLine(0);
+                String city = addresses.get(0).getLocality();
+                String state = addresses.get(0).getAdminArea();
+                String country = addresses.get(0).getCountryName();
+                String postalCode = addresses.get(0).getPostalCode();
+                Log.d("ADDRESS",address+" - "+city+" - "+country+" - "+state);
+                Country country_location = new Country(country,city,address);
+                country_location.setLatitude(latLng.latitude);
+                country_location.setLongitude(latLng.longitude);
+                listener.dataLocation(country_location);
+            } catch (IOException e) {
+                e.printStackTrace();
+                listener.hasError(e.getMessage());
+            }
 
-        } catch (IOException e) {
-            e.printStackTrace();
-            listener.hasError(e.getMessage());
-        }
+        },800);
 
     }
 

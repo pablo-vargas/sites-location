@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.countries.activities.AddActivity;
+import com.example.countries.activities.ListActivity;
 import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), AddActivity.class));
         });
         btnList.setOnClickListener(v -> {
-
+            startActivity(new Intent(getApplicationContext(), ListActivity.class));
         });
     }
 }
