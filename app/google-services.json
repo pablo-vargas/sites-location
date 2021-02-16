@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "44139877715",
+    "firebase_url": "https://countries-texi-default-rtdb.firebaseio.com",
+    "project_id": "countries-texi",
+    "storage_bucket": "countries-texi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44139877715:android:3c86ffab5739e9604dbda6",
+        "android_client_info": {
+          "package_name": "com.example.countries"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "44139877715-283g65n5h7iogrvta6t90r3g16ikvjqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNIqDS6z5WSpl5d-ydiDxNudUhU7RAeuI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "44139877715-283g65n5h7iogrvta6t90r3g16ikvjqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
